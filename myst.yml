@@ -1,0 +1,19 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 1d94d9b5-2176-4082-8685-c78c4eab894c
+  title: Web Notes
+  # thumbnail: https://openmoji.org/data/color/svg/1F951.svg
+  exclude: 
+  - scratch/**
+  # title: Fancy Title 🎩
+  description: web notes common natkite dub
+  # keywords: []
+  # authors: []
+  github: https://github.com/jupyter-book/mystmd-quickstart
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+site:
+  template: book-theme
+  options:
+    favicon: favicon.svg
+    logo_text: netweb notes
