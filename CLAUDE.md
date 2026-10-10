@@ -8,7 +8,7 @@ Build locally with `myst start`.
 
 | Course | Folder | Source |
 |---|---|---|
-| NETS 5116, Network Science I (Barabási) | `NETS Bar/`, `NETS 101/` | `network-science-textbook` skill |
+| NETS 5116, Network Science I | `NETS Bar/`, `NETS 101/` | Barabási, *Network Science* (`network-science-textbook` skill) for intuition; Newman, *Networks* (2nd ed.) for the maths. Pages are by topic and combine both. |
 | NETS 6116, Network Science II (Krioukov) | — | `network-science-textbook` skill |
 | PHYS 7335, Dynamical Processes on Complex Networks | — | https://mobs-lab.github.io/phys7335/ |
 | NETS 7332, Machine Learning with Graphs (Eliassi-Rad) | `NETS 7332/` | https://eliassi.org/fa25nets.html; intro lectures follow Leskovec's CS224W |
