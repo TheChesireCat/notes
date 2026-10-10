@@ -2,22 +2,38 @@
 version: 1
 project:
   id: 1d94d9b5-2176-4082-8685-c78c4eab894c
-  title: Web Notes
-  # thumbnail: https://openmoji.org/data/color/svg/1F951.svg
-  exclude: 
-  - scratch/**
-  - docs/**
-  - CLAUDE.md
-  - CONTEXT.md
-  - TEMPLATE.md
-  # title: Fancy Title 🎩
-  description: web notes common natkite dub
-  # keywords: []
-  # authors: []
-  github: https://github.com/jupyter-book/mystmd-quickstart
-  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  title: NETS notes
+  description: PhD-level reference notes for the Northeastern Network Science core courses.
+  github: https://github.com/TheChesireCat/notes
+  exclude:
+    - docs/**
+    - CLAUDE.md
+    - CONTEXT.md
+    - TEMPLATE.md
+  toc:
+    - file: index.md
+    - file: notation.md
+    - file: nets-5116/index.md
+      children:
+        - title: Barabási chapter notes
+          children:
+            - pattern: nets-5116/barabasi/*.md
+        - title: Barabási summaries
+          children:
+            - pattern: nets-5116/barabasi/summaries/*.md
+        - title: Newman chapter notes
+          children:
+            - pattern: nets-5116/newman/*.md
+    - file: nets-6116/index.md
+    - file: phys-7335/index.md
+    - file: nets-7332/index.md
+      children:
+        - title: Readings
+          children:
+            - pattern: nets-7332/readings/*.md
 site:
   template: book-theme
   options:
     favicon: favicon.svg
-    logo_text: netweb notes
+    logo_text: NETS notes
+    folders: true

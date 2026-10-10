@@ -19,9 +19,10 @@ Single-context repo (this repo):
 ├── CONTEXT.md
 ├── docs/adr/
 │   └── 0001-<decision>.md
-├── NETS Bar/
-├── NETS 101/
-├── NETS 7332/
+├── nets-5116/
+├── nets-6116/
+├── phys-7335/
+├── nets-7332/
 └── myst.yml
 ```
 
