@@ -9,6 +9,7 @@ short_title: Ch. 7 · Degree correlations
 
 Angelina Jolie and Brad Pitt, Ben Affleck and Jennifer Garner, Harrison Ford and Calista Flockhart, Michael Douglas and Catherine Zeta-Jones, Tom Cruise and Katie Holmes, Richard Gere and Cindy Crawford ([Image 7.1](#image-71)). An odd list, yet instantly recognizable to those immersed in the headline-driven world of celebrity couples. They are Hollywood stars that are or were married. Their weddings (and breakups) has drawn countless hours of media coverage and sold millions of gossip magazines. Thanks to them we take for granted that celebrities marry each other. We rarely pause to ask: Is this normal? In other words, what is the true chance that a celebrity marries another celebrity?
 
+(image-71)=
 ![Hubs Dating Hubs](https://networksciencebook.com/images/ch-07/figure-7-1.jpg)
 
 **Image 7.1: Hubs Dating Hubs**
@@ -21,6 +22,7 @@ Even if we do not care about the dating habits of celebrities, we must pause and
 
 As obvious this may sound, this property is not present in all networks. Consider for example the protein-interaction network of yeast, shown in [Image 7.2](#image-72). A quick inspection of the network reveals its scale-free nature: numerous one- and two-degree proteins coexist with a few highly connected hubs. These hubs, however, tend to avoid linking to *each other*. They link instead to many small-degree nodes, generating a hub-and-spoke pattern. This is particularly obvious for the two hubs highlighted in [Image 7.2](#image-72): they almost exclusively interact with small-degree proteins.
 
+(image-72)=
 ![Hubs Avoiding Hubs](https://networksciencebook.com/images/ch-07/figure-7-2.jpg)
 
 **Image 7.2: Hubs Avoiding Hubs**
@@ -54,6 +56,7 @@ Just by the virtue of the many links they have, hubs are expected to link to eac
 
 In general a network displays degree correlations if the number of links between the high and low-degree nodes is systematically different from what is expected by chance. In other words, the number of links between nodes of degrees $k$ and $k'$ deviates from (7.1).
 
+(image-73)=
 ![Degree Correlation Matrix](https://networksciencebook.com/images/ch-07/figure-7-3.jpg)
 
 **Image 7.3: Degree Correlation Matrix**
@@ -89,6 +92,7 @@ $$e_{ij} = q_i q_j \hspace{20 mm} (7.5)$$
 
 A network displays degree correlations if $e_{ij}$ deviates from the random expectation (7.5). Note that (7.2) - (7.5) are valid for networks with an arbitrary degree distribution, hence they apply to both random and scale-free networks.
 
+(image-74)=
 ![Perfect Assortativity](https://networksciencebook.com/images/ch-07/figure-7-4.jpg)
 
 **Image 7.4: Perfect Assortativity**
@@ -109,7 +113,7 @@ We therefore need to develop a more compact way to detect degree correlations. T
 
 While $e_{ij}$ contains the complete information about the degree correlations characterizing a particular network, it is difficult to interpret its content. In this section is to introduce the degree correlation function that offers a simpler way to quantify degree correlations.
 
-Degree correlations capture the relationship between the degrees of nodes that link to each other. One way to quantify their magnitude is to measure for each node $i$ the average degree of its neighbors ([Image 7.5](#image-75))
+Degree correlations capture the relationship between the degrees of nodes that link to each other. One way to quantify their magnitude is to measure for each node $i$ the average degree of its neighbors (Image 7.5)
 
 $$k_{nn}(k_i) = \frac{1}{k_i}\sum_{j=1}^N A_{ij}k_j \hspace{20 mm} (7.6)$$
 
@@ -136,6 +140,7 @@ where $P(k'|k)$ is the conditional probability that following a link of a $k$-de
 - **Disassortative Network**  
   In disassortative network hubs prefer to link to low-degree nodes. Consequently $k_{nn}(k)$ decreases with $k$, as observed for the metabolic network ([Image 7.6c](#image-76)).
 
+(image-76)=
 ![Degree Correlation Function](https://networksciencebook.com/images/ch-07/figure-7-6.jpg)
 
 **Image 7.6: Degree Correlation Function**
@@ -214,6 +219,7 @@ $$k_s(N) \sim (\langle k \rangle N)^{1/2} \hspace{20 mm} (7.15)$$
 
 In other words, nodes whose degree exceeds (7.15) have $E_{kk'} > 1$, a conflict that gives rise to degree correlations.
 
+(image-77)=
 ![Structural Disassortativity](https://networksciencebook.com/images/ch-07/figure-7-7.jpg)
 
 **Image 7.7: Structural Disassortativity**
@@ -230,6 +236,7 @@ To understand the consequences of the structural cutoff we must first ask if a n
 - **Structural Disassortativity**  
   For scale-fee networks with $\gamma < 3$ we have $1/(\gamma-1) > 1/2$, i.e. $k_s$ can be smaller than $k_{\max}$. Consequently nodes whose degree is between $k_s$ and $k_{\max}$ can violate $E_{kk'} > 1$. In other words the network has fewer links between its hubs than (7.14) would predict. These networks will therefore become disassortative, a phenomenon we call *structural disassortativity*. This is illustrated in [Image 7.8a,b](#image-78) that show a simple scale-free network generated by the configuration model. The network shows disassortative scaling, despite the fact that we did not impose degree correlations during its construction.
 
+(image-78)=
 ![Natural and Structural Cutoffs](https://networksciencebook.com/images/ch-07/figure-7-8.jpg)
 
 **Image 7.8: Natural and Structural Cutoffs**
@@ -258,6 +265,7 @@ ii. **Degree Preserving Randomization with Multiple Links (R-M)**
 
 We performed the randomizations discussed above for three real networks. As [Image 7.9a](#image-79) shows, the assortative nature of the scientific collaboration network disappears under both randomizations. This indicates that the assortative correlations of the collaboration network is not linked to its scale-free nature. In contrast, for the metabolic network the observed disassortativity remains unchanged under *R-S* ([Image 7.9c](#image-79)). Consequently the disassortativity of the metabolic network is structural, being induced by its degree distribution.
 
+(image-79)=
 ![Randomization and Degree Correlations](https://networksciencebook.com/images/ch-07/figure-7-9.jpg)
 
 **Image 7.9: Randomization and Degree Correlations**
@@ -308,6 +316,7 @@ To understand the prevalence of degree correlations we need to inspect the corre
 - **Citation Network**  
   This network displays a puzzling behavior: for $k \leq 20$ the degree correlation function $k_{nn}(k)$ shows a clear assortative trend; for $k > 20$, however, we observe disassortative scaling ([Image 7.10j](#image-710)). Such mixed behavior can emerge in networks that display extreme assortativity ([Image 7.13b](#image-713)). This suggests that the citation network is strongly assortative, but its scale-free nature induces structural disassortativity, changing the slope of $k_{nn}(k)$ for $k \gg k_s$.
 
+(image-710)=
 ![Randomization and Degree Correlations](https://networksciencebook.com/images/ch-07/figure-7-10.jpg)
 
 **Image 7.10: Randomization and Degree Correlations**
@@ -328,6 +337,7 @@ A number of mechanisms have been proposed to explain the origin of the observed 
 
 The degree correlation function (7.7) is defined for undirected networks. To measure correlations in directed networks we must take into account that each node $i$ is characterized by an incoming $k_i^{in}$ and an outgoing $k_i^{out}$ degree [14]. We therefore define four degree correlation functions, $k_{nn}^{\alpha,\beta}(k)$, where $\alpha$ and $\beta$ refer to the *in* and *out* indices ([Image 7.11 a-d](#image-711)). In [Image 7.11e](#image-711) we show $k_{nn}^{\alpha,\beta}(k)$ for citation networks, indicating a lack of in-out correlations and the presence of assortativity for small $k$ for the other three correlations (*in-in, out-in, out-out*).
 
+(image-711)=
 ![Correlations in Directed Network](https://networksciencebook.com/images/ch-07/figure-7-11.jpg)
 
 **Image 7.11: Correlations in Directed Network**
@@ -392,6 +402,7 @@ In summary, (7.17) - (7.20) indicate that the initial attractiveness model gener
 **Bianconi-Barabási Model**  
 With a uniform fitness distribution the Bianconi-Barabási model generates a disassortative network [5] ([Image 7.12](#image-712)). The fact that the randomized version of the network is also disassortative indicates that the model's disassortativity is structural. Note, however, that the real $k_{nn}(k)$ and the randomized $k_{nn}^{R-S}(k)$ do not overlap, indicating that the disassortativity of the model is not fully explained by its scale-free nature.
 
+(image-712)=
 ![Correlations in the Bianconi-Barabási Model](https://networksciencebook.com/images/ch-07/figure-7-12.jpg)
 
 **Image 7.12: Correlations in the Bianconi-Barabási Model**
@@ -416,6 +427,7 @@ Several algorithms can generate networks with desired degree correlations [8, 17
   - **Step 2B: Disassortative**  
     By pairing the highest and the lowest degree nodes ($a$ with $d$ and $b$ with $c$), we connect nodes with different degrees, enhancing the network's disassortative nature.
 
+(image-713)=
 ![Xulvi-Brunet & Sokolov Algorithm](https://networksciencebook.com/images/ch-07/figure-7-13.jpg)
 
 **Image 7.13: Xulvi-Brunet & Sokolov Algorithm**
@@ -438,6 +450,7 @@ The correlations characterizing the networks generated by this algorithm converg
 
 The version of the Xalvi-Brunet & Sokolov algorithm introduced in [Image 7.13](#image-713) generates maximally assortative or disassortative networks. We can tune the magnitude of the generated degree correlations if we use the algorithm discussed in [Image 7.14](#image-714).
 
+(image-714)=
 ![Tuning Degree Correlations](https://networksciencebook.com/images/ch-07/figure-7-14.jpg)
 
 **Image 7.14: Tuning Degree Correlations**
@@ -469,6 +482,7 @@ An important property of a random network is the emergence of a phase transition
 - **Giant Component**  
   For large $\langle k \rangle$ the giant component is smaller in assortative networks than in neutral or disassortative networks. Indeed, assortativity forces the hubs to link to each other, hence they fail to attract to the giant component the numerous small degree nodes.
 
+(image-715)=
 ![Degree Correlations and the Phase Transition Point](https://networksciencebook.com/images/ch-07/figure-7-15.jpg)
 
 **Image 7.15: Degree Correlations and the Phase Transition Point**
@@ -489,6 +503,7 @@ Let us mention a few additional consequences of degree correlations:
 
 - Degree correlations impact our ability to control a network, altering the number of input signals one needs to achieve full control [30].
 
+(image-716)=
 ![Degree Correlations and Path Lengths](https://networksciencebook.com/images/ch-07/figure-7-16.jpg)
 
 **Image 7.16: Degree Correlations and Path Lengths**
@@ -497,6 +512,7 @@ Distance distribution for a random network with size $N = 10,000$ and $\langle k
 
 In summary, degree correlations are not only of academic interest, but they influence numerous network characteristics and have a discernable impact on many processes that take place on a network.
 
+(image-717)=
 ![The Minimum Cover](https://networksciencebook.com/images/ch-07/figure-7-17.jpg)
 
 **Image 7.17: The Minimum Cover**
@@ -557,6 +573,7 @@ Taken together, there are several reasons why we care about degree correlations 
 - Once present, degree correlations change a network's behavior (SECTION 7.7).
 - Degree correlations force us to move beyond the degree distribution, representing quantifiable patters that govern the way nodes link to each other that are not captured by $p_k$ alone.
 
+(image-718)=
 ![Politics is Never Neutral](https://networksciencebook.com/images/ch-07/figure-7-18.jpg)
 
 **Image 7.18: Politics is Never Neutral**
@@ -652,6 +669,7 @@ This is different from the scaling (7.10), which assumes a power law dependence 
 
 The table shows the estimated $r$ and $\mu$ for the ten reference networks. Directed networks were made undirected to measure $r$ and $\mu$.
 
+(image-719)=
 ![Degree Correlation Function](https://networksciencebook.com/images/ch-07/figure-7-19.jpg)
 
 **Image 7.19: Degree Correlation Function**
@@ -676,6 +694,7 @@ $$r = \frac{\sum_k kak^\mu q_k - \frac{\langle k^2 \rangle^2}{\langle k \rangle^
 
 For $\mu = 0$ the term in the last parenthesis vanishes, obtaining $r = 0$. Hence if $\mu = 0$ (neutral network), the network will be neutral based on $r$ as well. For $k > 1$ (7.22) suggests that for $\mu > 0$ the parenthesis is positive, hence $r > 0$, and for $\mu < 0$ the parenthesis is negative, hence $r < 0$. Therefore $r$ and $\mu$ predict degree correlations of similar kind.
 
+(image-720)=
 ![Correlation Between r and N](https://networksciencebook.com/images/ch-07/figure-7-20.jpg)
 
 **Image 7.20: Correlation Between r and N**
@@ -688,11 +707,11 @@ $$\begin{array}{l} \mu < 0 \to r < 0 \\ \mu = 0 \to r = 0 \\ \mu > 0 \to r > 0 \
 
 ### Directed Networks
 
-To measure correlations in directed networks we must take into account that each node $i$ is characterized by an incoming $k_i^{in}$ and an outgoing $k_i^{out}$ degree. We therefore define four degree correlation coefficients, $r_{in,in}$, $r_{in,out}$, $r_{out,in}$, $r_{out,out}$, capturing all possible combinations between the incoming and outgoing degrees of two connected nodes ([Image 7.21a-d](#image-721)). Formally we have [14]
+To measure correlations in directed networks we must take into account that each node $i$ is characterized by an incoming $k_i^{in}$ and an outgoing $k_i^{out}$ degree. We therefore define four degree correlation coefficients, $r_{in,in}$, $r_{in,out}$, $r_{out,in}$, $r_{out,out}$, capturing all possible combinations between the incoming and outgoing degrees of two connected nodes (Image 7.21a-d). Formally we have [14]
 
 $$r_{\alpha,\beta} = \frac{\sum_{jk} jk(e_{jk}^{\alpha,\beta} - q_{\leftarrow j}^\alpha q_{\to k}^\beta)}{\sigma_\leftarrow^\alpha \sigma_\to^\beta} \hspace{20 mm} (7.23)$$
 
-where $\alpha$ and $\beta$ refer to the *in* and *out* indices and $q_{\leftarrow j}^\alpha$ in the probability of finding a node with $\alpha$-degree $j$ by following a random link backward and $q_{\to k}^\beta$ in the probability of finding a $\beta$-link with degree $k$ by following a random link forward. $\sigma_\leftarrow^\alpha$ and $\sigma_\to^\beta$ are the corresponding standard deviations. To illustrate the use of (7.23), in [Image 7.21e](#image-721) we show the four correlation coefficients for the five directed reference networks (TABLE 7.1). Note, however, that for a complete characterization of degree correlations it is desirable to measure the four $k_{nn}(k)$ functions as well (BOX 7.3).
+where $\alpha$ and $\beta$ refer to the *in* and *out* indices and $q_{\leftarrow j}^\alpha$ in the probability of finding a node with $\alpha$-degree $j$ by following a random link backward and $q_{\to k}^\beta$ in the probability of finding a $\beta$-link with degree $k$ by following a random link forward. $\sigma_\leftarrow^\alpha$ and $\sigma_\to^\beta$ are the corresponding standard deviations. To illustrate the use of (7.23), in Image 7.21e we show the four correlation coefficients for the five directed reference networks (TABLE 7.1). Note, however, that for a complete characterization of degree correlations it is desirable to measure the four $k_{nn}(k)$ functions as well (BOX 7.3).
 
 ### Box 7.7: The Problem With Large Networks
 

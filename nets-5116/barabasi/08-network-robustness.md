@@ -9,7 +9,7 @@ short_title: Ch. 8 · Network robustness
 
 Errors and failures can corrupt all human designs: The failure of a component in your car's engine may force you to call for a tow truck or a wiring error in your computer chip can make your computer useless. Many natural and social systems have, however, a remarkable ability to sustain their basic functions even when some of their components fail. Indeed, while there are countless protein misfolding errors and missed reactions in our cells, we rarely notice their consequences. Similarly, large organizations can function despite numerous absent employees. Understanding the origins of this robustness is important for many disciplines:
 
-![Achilles' Heel of Complex Networks](https://networksciencebook.com/images/ch-08/figure-8-1.jpg)
+[View figure on networksciencebook.com](https://networksciencebook.com/images/ch-08/figure-8-1.jpg)
 
 **Image 8.1: Achilles' Heel of Complex Networks**
 
@@ -125,7 +125,7 @@ The answer depends on the tree density, controlled by the parameter *p*. For sma
 
 The simulations indicate that there is a critical $p_c$ at which it takes extremely long time for the fire to end. This $p_c$ is the critical threshold of the percolation problem. Indeed, at *p* = $p_c$ the giant component just emerges through the union of many small clusters (Image 8.6b). Hence the fire has to follow a long winding path to reach all trees in the loosely connected clusters, which can be rather time consuming.
 
-![Forest Fire](https://networksciencebook.com/images/ch-08/figure-8-6.jpg)
+[View figure on networksciencebook.com](https://networksciencebook.com/images/ch-08/figure-8-6.jpg)
 
 **Image 8.6: Forest Fire**
 

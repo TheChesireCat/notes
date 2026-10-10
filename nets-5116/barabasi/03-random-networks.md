@@ -88,13 +88,13 @@ The probability that a random network has exactly *L* links is the product of th
 2. The probability that the remaining $N(N-1)/2 - L$ attempts have not resulted in a link, which is $(1-p)^{N(N-1)/2-L}$.
 3. A combinational factor,
 
-$$\left( {\begin{array}{*{20}c} {\frac{{N(N - 1)}}{2}}  \\ L  \\ \end{array}} \right)$$
+$$\binom{\frac{{N(N - 1)}}{2}}{L}$$
 
 counting the number of different ways we can place *L* links among $N(N-1)/2$ node pairs.
 
 We can therefore write the probability that a particular realization of a random network has exactly *L* links as
 
-$$p_L  = \left( {\begin{array}{*{20}c} {\frac{{N(N - 1)}}{2}}  \\ L  \\ \end{array}} \right)p^L (1 - p)^{\frac{{N(N - 1)}}{2} - L} \quad (3.1)$$
+$$p_L  = \binom{\frac{{N(N - 1)}}{2}}{L}p^L (1 - p)^{\frac{{N(N - 1)}}{2} - L} \quad (3.1)$$
 
 As (3.1) is a binomial distribution (BOX 3.3), the expected number of links in a random graph is
 
@@ -124,7 +124,7 @@ If we toss a fair coin *N* times, tails and heads occur with the same probabilit
 
 The binomial distribution has the form
 
-$$p_x  = \left( {\begin{array}{*{20}c} N  \\ x  \\ \end{array}} \right)p^x (1 - p)^{N - x}$$
+$$p_x  = \binom{N}{x}p^x (1 - p)^{N - x}$$
 
 The mean of the distribution (first moment) is
 
@@ -160,11 +160,11 @@ In a random network the probability that node *i* has exactly *k* links is the p
 - The probability that the remaining $(N-1-k)$ links are missing, or $(1-p)^{N-1-k}$
 - The number of ways we can select *k* links from $N-1$ potential links a node can have, or
 
-$$\left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right)$$
+$$\binom{N - 1}{k}$$
 
 Consequently the degree distribution of a random network follows the binomial distribution
 
-$$p_k  = \left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right)p^k (1 - p)^{N - 1 - k} \quad (3.7)$$
+$$p_k  = \binom{N - 1}{k}p^k (1 - p)^{N - 1 - k} \quad (3.7)$$
 
 The shape of this distribution depends on the system size *N* and the probability *p*. The binomial distribution (BOX 3.3) allows us to calculate the network's average degree $\langle k \rangle$, recovering (3.3), as well as its second moment $\langle k^2 \rangle$ and variance $\sigma_k$.
 
@@ -614,7 +614,7 @@ $$\langle L \rangle  = \frac{{pN(N - 1)}}{2}$$
 **Degree Distribution:**
 
 Binomial Form:
-$$p_k  = \left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right)p^k (1 - p)^{N - 1 - k}$$
+$$p_k  = \binom{N - 1}{k}p^k (1 - p)^{N - 1 - k}$$
 
 Poisson Form:
 $$p_k  = e^{ - \langle k \rangle } \frac{{\langle k \rangle ^k }}{{k!}}$$
@@ -706,11 +706,11 @@ A Cayley Tree With $k = 3$ and $P = 5$.
 
 To derive the Poisson form of the degree distribution we start from the exact binomial distribution (3.7)
 
-$$p_k  = \left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right)p^k (1 - p)^{N - 1 - k} \quad (3.22)$$
+$$p_k  = \binom{N - 1}{k}p^k (1 - p)^{N - 1 - k} \quad (3.22)$$
 
 that characterizes a random graph. We rewrite the first term on the r.h.s. as
 
-$$\left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right) = \frac{{(N - 1)(N - 1 - 1)(N - 1 - 2)...(N - 1 - k + 1)}}{{k!}} \approx \frac{{(N - 1)^k }}{{k!}} \quad (3.23)$$
+$$\binom{N - 1}{k} = \frac{{(N - 1)(N - 1 - 1)(N - 1 - 2)...(N - 1 - k + 1)}}{{k!}} \approx \frac{{(N - 1)^k }}{{k!}} \quad (3.23)$$
 
 where in the last term we used that $k \ll N$. The last term of (3.22) can be simplified as
 
@@ -730,7 +730,7 @@ $$(1 - p)^{N - 1 - k}  = e^{ - \langle k \rangle } \quad (3.24)$$
 
 Combining (3.22), (3.23), and (3.24) we obtain the Poisson form of the degree distribution
 
-$$p_k  = \left( {\begin{array}{*{20}c} {N - 1}  \\ k  \\ \end{array}} \right)p^k (1 - p)^{(N - 1) - k}  = \frac{{(N - 1)^k }}{{k!}}p^k e^{ - \langle k \rangle }  = \frac{{(N - 1)^k }}{{k!}}\left( {\frac{{\langle k \rangle }}{{N - 1}}} \right)^k e^{ - \langle k \rangle }$$
+$$p_k  = \binom{N - 1}{k}p^k (1 - p)^{(N - 1) - k}  = \frac{{(N - 1)^k }}{{k!}}p^k e^{ - \langle k \rangle }  = \frac{{(N - 1)^k }}{{k!}}\left( {\frac{{\langle k \rangle }}{{N - 1}}} \right)^k e^{ - \langle k \rangle }$$
 
 or
 
