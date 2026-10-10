@@ -28,6 +28,9 @@ project:
     - file: phys-7335/index.md
     - file: nets-7332/index.md
       children:
+        - title: Basics
+          children:
+            - pattern: nets-7332/basics/*.md
         - title: Readings
           children:
             - pattern: nets-7332/readings/*.md

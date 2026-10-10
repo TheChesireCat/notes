@@ -32,6 +32,21 @@ All pages use these symbols. A page that departs from them says so in its **Nota
 | $r$ | degree assortativity coefficient | |
 | $Q$ | modularity | |
 | $\mathcal{N}(i)$ | neighbourhood of node $i$ | ML papers: $\mathcal{N}(v)$ |
+| $t_i$ | number of triangles containing node $i$ | |
+| $\mathrm{vol}(G) = \sum_i k_i = 2L$ | volume of an undirected graph | |
+| $\{\!\{\cdot\}\!\}$ | multiset (e.g. of neighbour states) | |
+
+### Random walks and normalised matrices
+
+| Symbol | Meaning | Elsewhere |
+|---|---|---|
+| $P = D^{-1}A$ | random-walk matrix of an undirected graph; $P_{ij} = A_{ij}/k_i$ is the probability of stepping $i \to j$ | |
+| $M = A D_{\mathrm{out}}^{-1}$ | column-stochastic transition matrix of a directed graph, $M_{ij} = A_{ij}/k_j^{\mathrm{out}}$ (step $j \to i$) | CS224W uses the same |
+| $D_{\mathrm{out}}$ | diagonal out-degree matrix | |
+| $S = D^{-1/2} A D^{-1/2}$ | symmetrically normalised adjacency | |
+| $\mathcal{L}_{\mathrm{sym}} = I - S$ | normalised Laplacian | |
+| $v$ | teleport / restart distribution (PageRank, PPR, RWR) | |
+| $\beta$ | PageRank damping factor (probability of following a link). **Clashes** with the transmission rate; pages using both say which is meant. | Newman: $\alpha$ |
 
 ### Random graphs and generating functions
 
@@ -69,6 +84,9 @@ All pages use these symbols. A page that departs from them says so in its **Nota
 | $\sigma$ | pointwise nonlinearity |
 | $\tilde A = A + I$, $\tilde D$ | adjacency with self-loops and its degree matrix |
 | $\hat A = \tilde D^{-1/2} \tilde A \tilde D^{-1/2}$ | GCN propagation matrix |
+| $\mathcal{V}_L$, $\mathcal{V}_U$ | labelled and unlabelled node sets (semi-supervised node classification) |
+| $h$ | edge homophily ratio: fraction of edges joining same-label nodes (not to be confused with $h_v^{(\ell)}$) |
+| $\mathcal{R}$ | set of relation (edge) types in a heterogeneous or knowledge graph |
 
 ### Higher-order structures
 
