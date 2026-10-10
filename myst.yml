@@ -6,6 +6,9 @@ project:
   # thumbnail: https://openmoji.org/data/color/svg/1F951.svg
   exclude: 
   - scratch/**
+  - docs/**
+  - CLAUDE.md
+  - CONTEXT.md
   # title: Fancy Title 🎩
   description: web notes common natkite dub
   # keywords: []
