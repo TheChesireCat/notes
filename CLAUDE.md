@@ -19,6 +19,10 @@ Build locally with `myst start`.
 - Optimise for later recall: a short summary at the top, scannable headings, key results in
   admonitions, and cross-links to related pages in other courses.
 - Synthesise and cite sources; don't reproduce textbook text verbatim.
+- Start every page from `TEMPLATE.md` and keep its section order. `NETS 7332/readings/01-how-why.md` is the reference example.
+- Use the symbols in `notation.md`; add a symbol there before using it on more than one page.
+- Check numbers in worked examples by computing them, rather than copying them.
+- Vocabulary for pages and sections is defined in `CONTEXT.md`.
 
 ## Agent skills
 

@@ -9,6 +9,7 @@ project:
   - docs/**
   - CLAUDE.md
   - CONTEXT.md
+  - TEMPLATE.md
   # title: Fancy Title 🎩
   description: web notes common natkite dub
   # keywords: []
