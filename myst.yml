@@ -26,6 +26,8 @@ project:
             - pattern: nets-5116/newman/*.md
     - file: nets-6116/index.md
     - file: phys-7335/index.md
+      children:
+        - pattern: phys-7335/??-*.md
     - file: nets-7332/index.md
       children:
         - title: Basics

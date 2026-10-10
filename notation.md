@@ -60,18 +60,39 @@ All pages use these symbols. A page that departs from them says so in its **Nota
 | $u$ | probability that an edge does not lead to the giant component |
 | $f$, $f_c$ | fraction of nodes removed, critical fraction |
 
+### Degree classes
+
+| Symbol | Meaning |
+|---|---|
+| $N_k$ | number of nodes of degree $k$ |
+| $\kappa = \langle k^2 \rangle / \langle k \rangle$ | heterogeneity parameter; mean degree of a neighbour reached along a random edge |
+| $P(k' \mid k)$ | probability that an edge from a degree-$k$ node ends at a degree-$k'$ node; uncorrelated: $k' p_{k'}/\langle k \rangle$ |
+| $\bar k_{nn}(k)$ | mean neighbour degree of degree-$k$ nodes |
+| $C_{kk'} = k\,P(k' \mid k)$ | degree-class connectivity matrix (heterogeneous mean-field thresholds) |
+
 ### Spreading processes
 
 | Symbol | Meaning |
 |---|---|
-| $S, I, R$ (or $s, i, r$ as densities) | susceptible, infected, recovered compartments |
-| $\beta$ | transmission rate per contact |
+| $S, I, R$ (or $s, i, r$ as densities) | susceptible, infected, recovered compartments. **Clash:** $S$ is also the giant-component / epidemic size, so pages that need both write densities $s, i, r$ |
+| $\beta$ | transmission rate **per contact** (per edge) |
+| $\bar\beta = \beta \langle k \rangle$ | per-capita force-of-infection rate under homogeneous mixing; homogeneous-mixing pages that write $\beta$ for this say so |
 | $\mu$ | recovery rate |
-| $\lambda = \beta/\mu$ | effective spreading rate |
+| $\sigma$ | latent (E → I) rate in SEIR |
+| $\lambda = \beta/\mu$ | effective spreading rate (rumour pages use $\lambda$ for the spreading rate itself, and say so) |
 | $\lambda_c$ | epidemic threshold |
 | $R_0$, $R_t$ | basic and effective reproduction numbers |
-| $\rho$ | stationary prevalence (SIS) or final epidemic size (SIR) |
+| $R_*$ | global invasion threshold of a metapopulation |
+| $r$ | early (Malthusian) growth rate, $I(t) \propto e^{rt}$; written $r_g$ where it would clash with the recovered density $r$ |
+| $\rho$, $\rho_k$, $\rho_i$ | prevalence (SIS) or final size (SIR); per degree class; per node |
+| $\rho(\cdot)$, $s(\cdot)$ | spectral radius and spectral bound of a matrix (always with an argument, to distinguish from prevalence) |
 | $\Theta$ | probability that an edge points to an infected node (heterogeneous mean-field) |
+| $T$ | transmissibility: probability an infected node transmits along a given edge before recovering |
+| $P_\infty$ | probability that a single seed causes a large outbreak |
+| $g$, $g_c$ | immunised fraction and its critical value |
+| $B$ | non-backtracking (Hashimoto) matrix; SIR threshold $T_c = 1/\Lambda_{\max}(B)$ |
+| $\mathrm{IPR}$ | inverse participation ratio of the leading eigenvector (localisation) |
+| $\mathcal{L}_{\mathrm{rw}} = I - P$ | random-walk Laplacian |
 
 ### Graph machine learning
 
