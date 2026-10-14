@@ -25,6 +25,8 @@ project:
           children:
             - pattern: nets-5116/newman/*.md
     - file: nets-6116/index.md
+      children:
+        - pattern: nets-6116/??-*.md
     - file: phys-7335/index.md
       children:
         - pattern: phys-7335/??-*.md
