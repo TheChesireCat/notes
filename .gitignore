@@ -2,3 +2,4 @@
 _build
 .DS_Store
 .playwright-mcp
+.venv

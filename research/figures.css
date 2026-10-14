@@ -1,0 +1,4 @@
+/* Issue #77 test: invert opt-in images on the dark theme. */
+.dark img.invert-dark {
+  filter: invert(1) hue-rotate(180deg);
+}

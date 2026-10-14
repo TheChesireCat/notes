@@ -1,0 +1,46 @@
+# DRAFT for issue #77, not active: workflows only run from .github/workflows/.
+# Option (c), scripts write committed SVGs; also option (b) when companion notebooks
+# are committed with outputs. No Python in CI. Changes from the current deploy.yml are
+# marked "# NEW" / "# CHANGED".
+
+name: MyST GitHub Pages Deploy
+on:
+  push:
+    branches: [main]
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5                     # CHANGED: v3 -> v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x                                 # CHANGED: Node 18 is end-of-life
+      - name: Install MyST
+        run: npm install -g mystmd@1.11.0                    # CHANGED: pinned
+      # NEW (optional): fail if a committed SVG is older than the script that makes it.
+      # Shell only; reads the dc:source / dc:identifier stamp the script writes.
+      - name: Check figures match their scripts              # NEW
+        run: bash scripts/check_figures.sh   # research/scripts/ on this branch
+      - name: Build HTML Assets
+        run: myst build --html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

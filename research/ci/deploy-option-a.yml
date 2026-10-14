@@ -1,0 +1,76 @@
+# DRAFT for issue #77, not active: workflows only run from .github/workflows/.
+# Option (a), in-page {code-cell} figures executed at build time (also option (b) if
+# companion notebooks are executed in CI rather than committed with outputs).
+# Changes from the current deploy.yml are marked "# NEW" / "# CHANGED".
+
+name: MyST GitHub Pages Deploy
+on:
+  push:
+    branches: [main]
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5                     # CHANGED: v3 -> v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x                                 # CHANGED: Node 18 is end-of-life
+      - name: Install MyST
+        run: npm install -g mystmd@1.11.0                    # CHANGED: pinned
+
+      # NEW: Python + kernel. myst starts its own Jupyter server from the PATH, and the
+      # pages' `kernelspec: {name: python3}` resolves to this venv's ipykernel.
+      - uses: astral-sh/setup-uv@v6                          # NEW
+        with:
+          python-version: '3.12'
+      - name: Install Python figure dependencies             # NEW
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+
+      # NEW: restore the execution cache. Entries are <md5 of a page's code>.ipynb, so
+      # restoring the newest cache gives hits for every page whose code is unchanged.
+      # actions/cache keys are immutable, so the key is per-run and restore-keys picks
+      # up the latest. The requirements hash invalidates everything on a dependency bump
+      # (the myst cache key itself ignores package versions).
+      - name: Restore execution cache                        # NEW
+        uses: actions/cache@v4
+        with:
+          path: _build/execute
+          key: myst-execute-${{ hashFiles('requirements.txt') }}-${{ github.run_id }}
+          restore-keys: |
+            myst-execute-${{ hashFiles('requirements.txt') }}-
+
+      - name: Build HTML Assets
+        # CHANGED: --execute. A failing cell is only logged (exit 0), so grep the log to
+        # fail the deploy. Not --strict: it also fails on any remote-image fetch error,
+        # and the Barabási pages' networksciencebook.com images do flake.
+        shell: bash
+        run: |
+          myst build --html --execute 2>&1 | tee myst.log
+          if grep -q "An exception occurred during code execution" myst.log; then
+            echo "::error::a code cell raised; see myst.log above"
+            exit 1
+          fi
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

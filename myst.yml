@@ -10,6 +10,8 @@ project:
     - CLAUDE.md
     - CONTEXT.md
     - TEMPLATE.md
+    - .venv/**
+    - research/FINDINGS.md
   toc:
     - file: index.md
     - file: notation.md
@@ -38,9 +40,17 @@ project:
         - title: Readings
           children:
             - pattern: nets-7332/readings/*.md
+    - title: Research (issue 77)
+      children:
+        - file: research/figure-test.md
+        - file: research/figure-static.md
+        - file: research/figure-error.md
+        - file: research/figure-companion.ipynb
+          hidden: true
 site:
   template: book-theme
   options:
     favicon: favicon.svg
     logo_text: NETS notes
     folders: true
+    style: research/figures.css

@@ -1,0 +1,7 @@
+# Issue #77 draft: Python needed to execute figure code at build time (option a).
+# Versions are the ones tested locally on 2026-10-14.
+ipykernel==7.4.0
+jupyter-server==2.21.1
+matplotlib==3.11.2
+networkx==3.7
+numpy==2.5.4
