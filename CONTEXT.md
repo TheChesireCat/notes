@@ -51,3 +51,25 @@ _Avoid_: see also
 **Self-test**:
 Recall questions at the end of a page, with the answers hidden.
 _Avoid_: quiz, exercises
+
+### Figures
+
+**Figure**:
+A numbered, captioned visual on a page, generated from Python code so it can be reproduced and adjusted.
+_Avoid_: image, picture, plot (a plot is one kind of figure)
+
+**Sweep figure**:
+A figure showing how a quantity changes as one model parameter varies, drawn as overlaid curves or a row of small panels.
+_Avoid_: parameter plot, animation
+
+**Model sample**:
+A figure drawing one random graph from a model at stated parameters, so the reader sees what the ensemble produces.
+_Avoid_: example network, visualisation
+
+**Diagram**:
+A schematic of how concepts, steps or models relate, made of boxes and arrows, with no data in it.
+_Avoid_: figure (when there is no data), flowchart
+
+**Figure list**:
+The ranked set of figures planned for one page, each with what it shows and why it helps recall.
+_Avoid_: figure backlog, wishlist
